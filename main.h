@@ -9,7 +9,6 @@ int alpha(int c);
 int string(char *str);
 void modu(void);
 int digit(long int n, int base);
-int numbers(int argument, va_list args);
 int operation(char argument, va_list args);
 
 
