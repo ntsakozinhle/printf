@@ -4,18 +4,6 @@
 #include "main.h"
 
 /**
-* _putchar - writes the char c to stdout
-* @c: the character to print
-* Return: 1 on succes
-* On error , - 1 is returned
-*/
-
-int _putchar(char c)
-{
-return (write(1, &c, 1));
-}
-
-/**
 * print_int - function to print integers
 * @n: number to be printed
 * Return: count of characters printed
@@ -27,14 +15,14 @@ int count = 0;
 
 if (n < 0)
 {
-count += _putchar('_');
+count += putchar('_');
 n = -n;
 }
 if (n / 10)
 {
 print_int(n / 10);
 }
-count += _putchar((n % 10) + '0');
+count += putchar((n % 10) + '0');
 return (count);
 }
 
@@ -56,7 +44,7 @@ case 'd': case 'i':
 count += print_int((va_arg(ptr, int)));
 break;
 default:
-count += _putchar(format_specifier);
+count += putchar(format_specifier);
 break;
 }
 return (count);
@@ -78,7 +66,7 @@ va_start(ptr, format);
 for (i = 0; format[i] != '\0'; i++)
 {
 if (format[i] != '%')
-count += _putchar(format[i]);
+count += putchar(format[i]);
 else
 {
 i++;
