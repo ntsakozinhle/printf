@@ -4,18 +4,6 @@
 #include "main.h"
 
 /**
- * _putchar - writes the char c to stdout
- * @c: the character to print
- * Return: 1 on succes
- * On error , - 1 is returned
- */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * format_specifier_conditions - function selects the variable argument
  * to print based on the character after the %
  * @format_specifier: character after the %
@@ -31,7 +19,7 @@ int format_specifier_conditions(char format_specifier, va_list ptr)
 	switch (format_specifier)
 	{
 		case 'c':
-		count += _putchar(va_arg(ptr, int));
+		count += putchar(va_arg(ptr, int));
 		break;
 		case 's':
 		str = va_arg(ptr, char*);
@@ -39,16 +27,16 @@ int format_specifier_conditions(char format_specifier, va_list ptr)
 			return (0);
 		while (*str != '\0')
 		{
-			_putchar((int)*str);
+			putchar((int)*str);
 			count++;
 			str++;
 		}
 		break;
 		case '%':
-		count += _putchar(format_specifier);
+		count += putchar(format_specifier);
 		break;
 		default:
-		count += _putchar(format_specifier);
+		count += putchar(format_specifier);
 		break;
 	}
 	return (count);
