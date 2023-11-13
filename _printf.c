@@ -13,7 +13,11 @@ int count = 0;
 va_list ptr;
 va_start(ptr, format);
 
-for (i = 0; format[i] != '\0'; i++)
+if (format == NULL)
+{
+return (-1);
+}
+for (i = 0; format && format[i] != '\0'; i++)
 {
 if (format[i] != '%')
 count += _putchar(format[i]);
