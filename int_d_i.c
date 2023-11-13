@@ -15,7 +15,7 @@ int count = 0;
 
 if (n < 0)
 {
-count += putchar('_');
+count += putchar('-');
 n = -n;
 }
 if (n / 10)
