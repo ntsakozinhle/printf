@@ -74,5 +74,3 @@ void modu(void)
 {
 	putchar('%');
 }
-
-

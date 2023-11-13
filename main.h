@@ -9,6 +9,8 @@ int alpha(int c);
 int string(char *str);
 void modu(void);
 int digit(long int n, int base);
+void binary(int num);
+int hexa(long int n, int base);
 int operation(char argument, va_list args);
 
 

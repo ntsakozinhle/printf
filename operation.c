@@ -2,14 +2,12 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
-
 /**
  * operation - a function that declares specifiers to the function
  * @argument: specifier for operation
  * @args: arguments to be passed to function
  * Return: count
  */
-
 int operation(char argument, va_list args)
 {
 	int count = 0;
@@ -22,9 +20,30 @@ int operation(char argument, va_list args)
 	{
 		count += string(va_arg(args, char *));
 	}
+	else if (argument == 'b')
+	{
+		binary(va_arg(args, unsigned int));
+		count++;
+	}
+	else if (argument == 'o')
+	{
+		count += digit((long)(va_arg(args, unsigned int)), 8);
+	}
+	else if (argument == 'u')
+	{
+		count += digit((long)(va_arg(args, unsigned int)), 10);
+	}
 	else if (argument == 'd' || argument == 'i')
 	{
 		count += digit((long)(va_arg(args, int)), 10);
+	}
+	else if (argument == 'x')
+	{
+		count += digit((long)(va_arg(args, unsigned int)), 16);
+	}
+	else if (argument == 'X')
+	{
+		count += hexa((long)(va_arg(args, unsigned int)), 16);
 	}
 	else if (argument == '%')
 	{
