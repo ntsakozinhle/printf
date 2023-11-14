@@ -44,9 +44,18 @@ return (_putchar(c));
 int print_string(char *str)
 {
 int count = 0;
+int i;
 
 if (str == NULL)
-return (count);
+{
+str = "(null)";
+{
+for (i = 0; str[i]; i++)
+count += _putchar(str[i]);
+}
+_putchar('\n');
+return (6);
+}
 while (*str != '\0')
 {
 print_c((int)*str);
