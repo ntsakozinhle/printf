@@ -73,7 +73,7 @@ int octal_int(long int n)
 		count += _putchar('-');
 		n = -n;
 	}
-	
+
 	if (n == 0)
 	{
 		count += _putchar('0');
