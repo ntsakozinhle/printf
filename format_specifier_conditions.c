@@ -26,7 +26,7 @@ break;
 case 'd': case 'i':
 count += print_int((va_arg(ptr, int)));
 break;
-case 'x' : case 'X':
+case 'x': case 'X':
 count += hexa_int((long)(va_arg(ptr, int)), format_specifier);
 break;
 case 'u':
