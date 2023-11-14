@@ -26,6 +26,19 @@ break;
 case 'd': case 'i':
 count += print_int((va_arg(ptr, int)));
 break;
+case 'x' : case 'X':
+count += hexa_int((long)(va_arg(ptr, int)), format_specifier);
+break;
+case 'u':
+count += print_long_int((long)(va_arg(ptr, unsigned int)));
+break;
+case 'o':
+count += octal_int((long)(va_arg(ptr, unsigned int)));
+break;
+case 'b':
+binary_num((va_arg(ptr, int)));
+count++;
+break;
 default:
 count += _putchar(format_specifier);
 break;
