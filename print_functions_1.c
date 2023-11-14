@@ -6,18 +6,13 @@
  * Return: count
  */
 
-int print_long_int(long int n)
+int print_long_int(unsigned int n)
 {
 	int count = 0;
 
-	if (n < 0)
-	{
-		count += _putchar('-');
-		n = -n;
-	}
 	if (n / 10)
 	{
-		count += print_int(n / 10);
+		count += print_long_int(n / 10);
 	}
 	count += _putchar((n % 10) + '0');
 
@@ -25,38 +20,45 @@ int print_long_int(long int n)
 }
 
 /**
- * hexa_int - a function that prints an int with base 16
- * @n: parameter to be passed to function
- * @format_specifier: parameter for function secifiers
- * Return: count
+ * print_base_number - prints an unsigned int based of its base
+ * @n: unsigned int
+ * @base: specified base
+ * @capital: hexadecimal conversion to print in uppercase or lower case
+ * Return: number of characters printed
  */
 
-int hexa_int(long int n, char format_specifier)
+int print_base_number(unsigned int n, int base, int capital)
 {
 	int count = 0;
-	int remainder = n % 16;
-	char hexa_char;
+	char digit;
 
-	if (n < 0)
+	if (n / base)
 	{
-		count += _putchar('-');
-		n = -n;
+		count += print_base_number(n / base, base, capital);
 	}
-	if (n / 16)
+	digit = n % base;
+	if (digit > 9)
 	{
-		count += hexa_int(n / 16, format_specifier);
-	}
-	if (remainder < 10)
-	{
-		count += _putchar(remainder + '0');
+		count += _putchar((capital ? 'A' : 'a') + digit - 10);
 	}
 	else
 	{
-		hexa_char = (format_specifier == 'x') ? 'a' : 'A';
-		count += _putchar(remainder - 10 + hexa_char);
+		count += _putchar('0' + digit);
 	}
-
 	return (count);
+}
+
+
+/**
+ * hexa_int - a function that prints an int with base 16
+ * @n: parameter to be passed to function
+ * @capital: if character is uppercase or lowercase
+ * Return: count
+ */
+
+int hexa_int(unsigned int n, int capital)
+{
+	return (print_base_number(n, 16, capital));
 }
 
 /**
@@ -65,30 +67,9 @@ int hexa_int(long int n, char format_specifier)
  * Return: count
  */
 
-int octal_int(long int n)
+int octal_int(unsigned int n)
 {
-	int count = 0;
-
-	if (n < 0)
-	{
-		count += _putchar('-');
-		n = -n;
-	}
-
-	if (n == 0)
-	{
-		count += _putchar('0');
-	}
-
-	else
-	{
-		if (n / 8)
-		{
-			count += octal_int(n / 8);
-		}
-		count += _putchar((n % 8) + '0');
-	}
-	return (count);
+	return (print_base_number(n, 8, 0));
 }
 
 /**
@@ -97,27 +78,7 @@ int octal_int(long int n)
  * Return: void
  */
 
-void binary_num(unsigned int num)
+int binary_num(unsigned int num)
 {
-	int binNum[32];
-	int b = 0;
-	int j;
-
-	if (num == 0)
-	{
-		_putchar('0');
-	}
-	else
-	{
-		for ( ; num > 0; )
-		{
-			binNum[b++] = num % 2;
-			num /= 2;
-		}
-
-		for (j = b - 1; j >= 0; j--)
-		{
-			_putchar(binNum[j] + '0');
-		}
-	}
+	return (print_base_number(num, 2, 0));
 }
