@@ -24,9 +24,10 @@ int print_long_int(long int n)
 	return (count);
 }
 
-/*
+/**
  * hexa_int - a function that prints an int with base 16
  * @n: parameter to be passed to function
+ * @format_specifier: parameter for function secifiers
  * Return: count
  */
 
@@ -96,7 +97,7 @@ int octal_int(long int n)
  * Return: void
  */
 
-void binary_num(int num)
+void binary_num(unsigned int num)
 {
 	int binNum[32];
 	int b = 0;

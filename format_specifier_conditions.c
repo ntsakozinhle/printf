@@ -36,7 +36,7 @@ case 'o':
 count += octal_int((long)(va_arg(ptr, unsigned int)));
 break;
 case 'b':
-binary_num((va_arg(ptr, int)));
+binary_num((va_arg(ptr, unsigned int)));
 count++;
 break;
 default:
