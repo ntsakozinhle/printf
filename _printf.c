@@ -1,38 +1,33 @@
 #include "main.h"
-<<<<<<< HEAD
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
 
 /**
- * _printf - a function that prints operation to output
- * @format: parameter for specifier to be passed
- * Return: count
- */
+* _printf - custom print function
+* @format: format string
+* Return: the number of characters printed
+*/
 
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int count;
+int i;
+int count = 0;
+va_list ptr;
 
-	va_start(args, format);
-	count = 0;
+if (format == NULL)
+{
+return (1);
+}
+va_start(ptr, format);
 
-	while (*format != '\0')
-	{
-		if (*format == '%')
-		{
-			count += operation(*(format + 1), args);
-			format += 2;
-		}
-
-		else
-		{
-			count += putchar(*format);
-			format++;
-		}
-	}
-	va_end(args);
-
-	return (count);
+for (i = 0; format && format[i] != '\0'; i++)
+{
+if (format[i] != '%')
+count += _putchar(format[i]);
+else
+{
+i++;
+count += format_specifier_conditions(format[i], ptr);
+}
+}
+va_end(ptr);
+return (count);
 }
