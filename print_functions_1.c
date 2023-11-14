@@ -106,16 +106,18 @@ void binary_num(unsigned int num)
 	if (num == 0)
 	{
 		_putchar('0');
-		return;
 	}
-	for ( ; num > 0; )
+	else
 	{
-		binNum[b++] = num % 2;
-		num /= 2;
-	}
+		for ( ; num > 0; )
+		{
+			binNum[b++] = num % 2;
+			num /= 2;
+		}
 
-	for (j = b - 1; j >= 0; j--)
-	{
-		_putchar(binNum[j] + '0');
+		for (j = b - 1; j >= 0; j--)
+		{
+			_putchar(binNum[j] + '0');
+		}
 	}
 }
