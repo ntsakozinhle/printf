@@ -8,7 +8,7 @@
  * @args: arguments to be passed to function
  * Return: count
  */
-int operation(char argument, va_list args)
+int operation(int argument, va_list args)
 {
 	int count = 0;
 

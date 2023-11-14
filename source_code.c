@@ -6,12 +6,12 @@
 /**
  * alpha - a function that prints a char
  * @c: parameter for char
- * Return:  char
+ * Return:  1
  */
 
 int alpha(int c)
 {
-	return (putchar(c));
+	return (_putchar(c));
 }
 
 /**
@@ -30,7 +30,7 @@ int digit(long int n, int base)
 
 	if (n < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		return (digit(-n, base) + 1);
 	}
 
@@ -72,5 +72,5 @@ int string(char *str)
 
 void modu(void)
 {
-	putchar('%');
+	_putchar('%');
 }
