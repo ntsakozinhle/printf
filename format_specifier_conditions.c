@@ -40,6 +40,7 @@ binary_num((va_arg(ptr, unsigned int)));
 count++;
 break;
 default:
+count += _putchar('%');
 count += _putchar(format_specifier);
 break;
 }
