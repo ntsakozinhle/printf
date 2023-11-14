@@ -11,7 +11,7 @@
 
 int alpha(int c)
 {
-	return (_putchar(c));
+	return (putchar(c));
 }
 
 /**
@@ -30,7 +30,7 @@ int digit(long int n, int base)
 
 	if (n < 0)
 	{
-		_putchar('-');
+		putchar('-');
 		return (digit(-n, base) + 1);
 	}
 
@@ -72,5 +72,5 @@ int string(char *str)
 
 void modu(void)
 {
-	_putchar('%');
+	putchar('%');
 }

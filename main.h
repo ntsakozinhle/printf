@@ -6,7 +6,6 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c);
 int alpha(int c);
 int string(char *str);
 void modu(void);

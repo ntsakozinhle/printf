@@ -19,7 +19,7 @@ int hexa(long int n, int base)
 
 	if (n < 0)
 	{
-		_putchar('-');
+		putchar('-');
 		return (hexa(-n, base) + 1);
 	}
 
@@ -49,7 +49,7 @@ void binary(int num)
 
 	if (num == 0)
 	{
-		_putchar('0');
+		putchar('0');
 		return;
 	}
 
@@ -61,6 +61,6 @@ void binary(int num)
 
 	for (d = b - 1; d >= 0; d--)
 	{
-		_putchar(binNum[d] + '0');
+		putchar(binNum[d] + '0');
 	}
 }
