@@ -12,11 +12,12 @@ int i;
 int count = 0;
 va_list ptr;
 
-if (format == NULL)
-{
-return (1);
-}
+
 va_start(ptr, format);
+if (!format || (format[0] == '%' && !format[1]))
+return (-1);
+if (format[0] == '%' && format[1] == ' ' && !format[2])
+return (-1);
 
 for (i = 0; format && format[i] != '\0'; i++)
 {
