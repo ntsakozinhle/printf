@@ -58,7 +58,8 @@ if (str == NULL)
 
 while (*str != '\0')
 {
-	count += _putchar(*str);
+	print_c((int) *str);
+	count++;
 	str++;
 }
 _putchar('\n');
