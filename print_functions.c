@@ -44,7 +44,7 @@ return (_putchar(c));
 int print_string(char *str)
 {
 int count = 0;
-int i = 0;
+int i;
 
 if (str == NULL)
 {
@@ -62,6 +62,5 @@ while (*str != '\0')
 	count++;
 	str++;
 }
-_putchar('\n');
 return (count);
 }
