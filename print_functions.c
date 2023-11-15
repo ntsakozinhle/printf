@@ -48,10 +48,12 @@ int i;
 
 if (str == NULL)
 {
-	str = "(null)";
+str = "(null)";
+	{
 	for (i = 0; str[i]; i++)
 	{
-		count += _putchar(*str);
+		count += _putchar(str[i]);
+	}
 	}
 	return (6);
 }
