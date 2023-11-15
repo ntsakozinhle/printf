@@ -53,7 +53,7 @@ if (str == NULL)
 		count += _putchar(*str);
 		str++;
 	}
-	return (count);
+	return (6);
 }
 
 while (*str != '\0')
