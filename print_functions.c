@@ -61,5 +61,6 @@ while (*str != '\0')
 	count += _putchar(*str);
 	str++;
 }
+_putchar('\n');
 return (count);
 }
