@@ -41,6 +41,9 @@ break;
 case 'b':
 count += binary_num(va_arg(ptr, unsigned int));
 break;
+case 'p':
+count += pointer_int(va_arg(ptr, void *));
+break;
 default:
 count += _putchar('%');
 count += _putchar(format_specifier);

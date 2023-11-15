@@ -12,20 +12,30 @@ int i;
 int count = 0;
 va_list ptr;
 
-
 va_start(ptr, format);
+
 if (!format || (format[0] == '%' && !format[1]))
-return (-1);
-if (format[0] == '%' && format[1] == ' ' && !format[2])
-return (-1);
+{
+	return (-1);
+}
+if (format[0] == '%' && (format[1] == ' ' || format[1] == '\0'))
+{
+	return (-1);
+}
 
 for (i = 0; format && format[i] != '\0'; i++)
 {
-if (format[i] != '%')
-count += _putchar(format[i]);
-else
-{
-i++;
+	if (format[i] != '%')
+	{
+		count += _putchar(format[i]);
+	}
+	else
+	{
+		i++;
+		while (format[i] == ' ' || format[i] == '0')
+		{
+			i++;
+		}
 count += format_specifier_conditions(format[i], ptr);
 }
 }

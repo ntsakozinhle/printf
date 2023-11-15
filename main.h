@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdint.h>
 
 
 int _putchar(char);
@@ -17,6 +18,7 @@ int print_long_int(unsigned int n);
 int hexa_int(unsigned int n, int capital);
 int octal_int(unsigned int n);
 int print_base(unsigned int n, int base, int capital);
+int pointer_int(void *ptr);
 
 
 #endif
