@@ -44,23 +44,22 @@ return (_putchar(c));
 int print_string(char *str)
 {
 int count = 0;
-int i;
 
 if (str == NULL)
 {
-str = "(null)";
-{
-for (i = 0; str[i]; i++)
-count += _putchar(str[i]);
+	str = "(null)";
+	while (*str != '\0')
+	{
+		count += _putchar(*str);
+		str++;
+	}
+	return (count);
 }
-_putchar('\n');
-return (6);
-}
+
 while (*str != '\0')
 {
-print_c((int)*str);
-count++;
-str++;
+	count += _putchar(*str);
+	str++;
 }
 return (count);
 }
