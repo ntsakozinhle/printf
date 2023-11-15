@@ -44,14 +44,14 @@ return (_putchar(c));
 int print_string(char *str)
 {
 int count = 0;
+int i = 0;
 
 if (str == NULL)
 {
 	str = "(null)";
-	while (*str != '\0')
+	for (i = 0; str[i]; i++)
 	{
 		count += _putchar(*str);
-		str++;
 	}
 	return (6);
 }
