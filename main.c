@@ -41,5 +41,12 @@ printf("Len:[%d]\n", len2);
 _printf("Unknown:[%r]\n");
 printf("Unknown:[%r]\n");
 _printf("%b\n", 98);
+_printf("%S\n", "Best\nSchool");
+_printf("%S\n", "No special character.");
+_printf("%S\n", "\x01\x02\x03\x04\x05\x06\x07");
+_printf("- What did you say?\n- %S\n- That's what I thought.\n", "");
+_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+_printf("%d\n", INT_MIN);
+printf("%d", INT_MIN);
 return (0);
 }
